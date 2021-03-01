@@ -7,9 +7,12 @@
 
 import UIKit
 
-class GameDetailsVC: UIViewController {
+class GameDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+   
+    
     
     @IBOutlet weak var gameImage: UIImageView!
+    @IBOutlet weak var picker: UIPickerView!
     
     @IBOutlet weak var gameTitle: UILabel!
     private (set) public var game: Game!
@@ -17,6 +20,12 @@ class GameDetailsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        picker.dataSource = self
+        picker.delegate = self
+
+
+        myGameList = [Game(gameTitle: "Assins Creed", nameOfImage: "Doesn't Matter", isInStock: true)]
         updateView()
 
         // Do any additional setup after loading the view.
@@ -31,8 +40,18 @@ class GameDetailsVC: UIViewController {
         gameImage.image = UIImage(named: game.imageName)
         gameTitle.text = game.title
         
-        
-        
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return myGameList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return myGameList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return myGameList[row].title
     }
 
 

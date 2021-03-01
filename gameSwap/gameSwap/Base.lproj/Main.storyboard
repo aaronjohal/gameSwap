@@ -273,15 +273,18 @@
                                 <color key="textColor" name="AccentColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Swap with:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucU-1H-W0X">
-                                <rect key="frame" x="49" y="561" width="225" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swap with:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucU-1H-W0X">
+                                <rect key="frame" x="49" y="521" width="208" height="24"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZGU-KV-CWH">
-                                <rect key="frame" x="81" y="609" width="252" height="61"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZGU-KV-CWH">
+                                <rect key="frame" x="49" y="550" width="316" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="6uj-FZ-XOF"/>
+                                    <constraint firstAttribute="width" constant="316" id="O6k-hd-vLh"/>
+                                </constraints>
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fuG-9h-dp2"/>
@@ -289,14 +292,18 @@
                         <constraints>
                             <constraint firstItem="3eO-VB-CAi" firstAttribute="leading" secondItem="fuG-9h-dp2" secondAttribute="leading" constant="49" id="2ln-1O-6eg"/>
                             <constraint firstItem="fuG-9h-dp2" firstAttribute="trailing" secondItem="3eO-VB-CAi" secondAttribute="trailing" constant="49" id="4q1-Us-iAE"/>
+                            <constraint firstItem="ZGU-KV-CWH" firstAttribute="top" secondItem="ucU-1H-W0X" secondAttribute="bottom" constant="5" id="5Dh-vY-uy0"/>
                             <constraint firstItem="A8H-2q-yBf" firstAttribute="top" secondItem="kHN-lJ-UuU" secondAttribute="bottom" constant="0.5" id="CRW-pQ-qoQ"/>
-                            <constraint firstItem="ucU-1H-W0X" firstAttribute="top" secondItem="A8H-2q-yBf" secondAttribute="bottom" constant="45" id="PoZ-hu-uwn"/>
+                            <constraint firstItem="ucU-1H-W0X" firstAttribute="top" secondItem="A8H-2q-yBf" secondAttribute="bottom" constant="5" id="PoZ-hu-uwn"/>
                             <constraint firstItem="ucU-1H-W0X" firstAttribute="leading" secondItem="fuG-9h-dp2" secondAttribute="leading" constant="49" id="RV5-fj-Ul9"/>
                             <constraint firstItem="kHN-lJ-UuU" firstAttribute="leading" secondItem="fuG-9h-dp2" secondAttribute="leading" constant="49" id="UkL-Wr-Eb7"/>
                             <constraint firstItem="fuG-9h-dp2" firstAttribute="trailing" secondItem="A8H-2q-yBf" secondAttribute="trailing" constant="49" id="Wwb-5E-ihQ"/>
                             <constraint firstItem="A8H-2q-yBf" firstAttribute="leading" secondItem="fuG-9h-dp2" secondAttribute="leading" constant="49" id="ZB1-R1-LVZ"/>
                             <constraint firstItem="3eO-VB-CAi" firstAttribute="top" secondItem="fuG-9h-dp2" secondAttribute="top" constant="13" id="aMe-Sg-kC7"/>
+                            <constraint firstItem="fuG-9h-dp2" firstAttribute="trailing" secondItem="ucU-1H-W0X" secondAttribute="trailing" constant="157" id="g7o-Nz-E7n"/>
                             <constraint firstItem="fuG-9h-dp2" firstAttribute="trailing" secondItem="kHN-lJ-UuU" secondAttribute="trailing" constant="49" id="hT2-Tl-JOW"/>
+                            <constraint firstItem="fuG-9h-dp2" firstAttribute="trailing" secondItem="ZGU-KV-CWH" secondAttribute="trailing" constant="49" id="iqq-Wz-YPS"/>
+                            <constraint firstItem="ZGU-KV-CWH" firstAttribute="leading" secondItem="fuG-9h-dp2" secondAttribute="leading" constant="49" id="sRS-RS-ple"/>
                             <constraint firstItem="kHN-lJ-UuU" firstAttribute="top" secondItem="3eO-VB-CAi" secondAttribute="bottom" constant="5" id="y5F-Qy-U1C"/>
                         </constraints>
                     </view>
@@ -304,6 +311,7 @@
                     <connections>
                         <outlet property="gameImage" destination="3eO-VB-CAi" id="FnI-ck-zVO"/>
                         <outlet property="gameTitle" destination="kHN-lJ-UuU" id="RDr-DR-gPU"/>
+                        <outlet property="picker" destination="ZGU-KV-CWH" id="dGe-4J-bnH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dF6-TT-DR2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
